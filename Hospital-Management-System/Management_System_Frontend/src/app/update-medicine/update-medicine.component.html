@@ -1,0 +1,53 @@
+<nav style="margin:auto" class="navbar navbar-expand-lg bg-dark">
+
+  <a style="color: white;" class="navbar-brand" href="#">RUSHIKESH HOSPITALS</a>
+  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+
+
+      <li class="nav-item">
+          <a style="color: white;"class="nav-link active" aria-current="page" href="javascript:void(0);" routerLink="/docdash">Back</a>
+        </li>
+
+
+      <!-- <li class="nav-item">
+        <a style="color: white;"class="nav-link active" aria-current="page" href="javascript:void(0);" routerLink="/create-medicine">Add Medicines</a>
+      </li> -->
+
+    </ul>
+
+    <div class="mx-2">
+
+      <!-- <button style="margin: 5px;"class="btn btn-danger" data-toggle="modal" data-target="#loginModal"><a style="color:white;" href="javascript:void(0);" routerLink="/home">Logout</a></button> -->
+
+  </div>
+
+  </div>
+
+</nav>
+
+
+<div class="container">
+
+  <h2 class="text-center">Update Medicine</h2>
+
+  <form (ngSubmit)="onSubmit()">
+
+
+    <div class="form-group">
+      <label>Drug Name</label>
+      <input type="text" id="drugName" name="drugName" placeholder="Enter Medicine Name" class="form-control" [(ngModel)]="medicine.drugName"/>
+    </div>
+
+    <div class="form-group">
+      <label>Stock</label>
+      <input type="text" id="stock" name="stock" placeholder="Enter stock Name" class="form-control" [(ngModel)]="medicine.stock"/>
+    </div>
+
+    <button class="btn btn-success" type="submit" >Submit</button>
+  </form>
+</div>

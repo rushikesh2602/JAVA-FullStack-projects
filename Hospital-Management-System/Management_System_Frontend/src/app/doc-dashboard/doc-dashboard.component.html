@@ -1,0 +1,127 @@
+
+<nav style="margin:auto" class="navbar navbar-expand-lg bg-dark">
+
+  <a style="color: white;" class="navbar-brand" href="#">RUSHIKESH HOSPITALS</a>
+  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+
+
+      <li class="nav-item">
+          <a style="color: white;"class="nav-link active" aria-current="page" href="javascript:void(0);" routerLink="/createpatient">Add Patient</a>
+        </li>
+
+        <li class="nav-item">
+          <a style="color: white;"class="nav-link active" aria-current="page" href="javascript:void(0);" routerLink="/view-medicine">View Medicine</a>
+        </li>
+
+        <li class="nav-item">
+        <button class="btn btn-danger" (click)="logout()">Log Out</button>
+        </li>
+
+    </ul>
+
+    <div class="mx-2">
+
+      <!-- <button style="margin: 5px;"class="btn btn-danger" data-toggle="modal" data-target="#loginModal"><a style="color:white;" href="javascript:void(0);" routerLink="/home">Logout</a></button> -->
+
+  </div>
+
+  </div>
+
+</nav>
+
+<div class="container">
+  <hr>
+    <h2 style="text-align: center;margin-top: 20PX;">Dashboard</h2>
+    <a style="color: rgb(86, 86, 86); font-size: x-large;"><marquee behavior="scroll" direction="left">
+      Welcome to Dashboard. Please find the patient list below!!. Click Appointments to view and update Appointments, Click Add Appointment to add new Appointment</marquee></a>
+  <hr>
+  <input type="text" name="search" placeholder="Search" >
+  <br>
+    <a style="color: rgb(86, 86, 86); font-size: xx-large;">Current Patient List in the Queue</a>
+  <div class="tableFixHead">
+  <br>
+
+
+<!-- <div class="container">
+
+  <div class="row">
+
+
+      <div class="col-md-6">
+          <div class="card">
+
+              <div class="text-center">
+                  <h1>Login As Doctor</h1>
+                  <h6>Please enter your Username & Password</h6>
+
+              </div>
+              <form>
+
+                  <div class="mb-3">
+                      <label for="formGroupExampleInput" class="form-label"><h4>Username</h4></label>
+                      <input type="text" name="username" [(ngModel)]="username" class="form-control" id="formGroupExampleInput" placeholder="User name" required>
+                    </div>
+                    <div class="mb-3">
+                      <label for="formGroupExampleInput2" class="form-label"><h4>Password</h4></label>
+                      <input type="password" name="password" [(ngModel)]="password" class="form-control" id="formGroupExampleInput2" placeholder="Password" required>
+                    </div>
+                    <div class="d-grid gap-2 d-md-block">
+
+                      <button (click)=checkLogin() style="margin: 5px;"  class="btn btn-success" type="button" >Login</button>
+
+                      <button style="margin: 5px;" class="btn btn-warning" type="button" routerLink="/home">Cancel</button>
+                    </div>
+
+              </form>
+
+
+
+          </div>
+      </div>
+  </div>
+</div> -->
+
+<div class="tableFixHead">
+<table class="table table-striped">
+
+  <thead class="table-header">
+
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>age</th>
+      <!-- <th>Dose</th>
+      <th>Prescription</th> -->
+      <th>Blood Type</th>
+      <th>urgency</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr *ngFor="let patient of patients">
+<td>{{patient.id}}</td>
+<td>{{patient.name}}</td>
+<td>{{patient.age}}</td>
+<!-- <td>{{patient.dose}}</td>
+<td>{{patient.prescription}}</td> -->
+<td>{{patient.blood}}</td>
+<td>{{patient.urgency}}</td>
+<td>
+  <button (click)="update(patient.id)" class="btn btn-info">Update</button>
+  <button (click)="delete(patient.id)" class="btn btn-danger" style="margin-left: 10px;">Delete</button>
+  <button (click)="view(patient.id)" class="btn btn-success" style="margin-left: 10px;">View</button>
+</td>
+
+<td>
+  <!-- <button (click)="delete(patient.id)" class="btn btn-danger">Delete</button> -->
+</td>
+    </tr>
+  </tbody>
+</table>
+</div>
